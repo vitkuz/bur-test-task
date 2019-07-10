@@ -3,11 +3,19 @@ import { Link } from 'react-router-dom';
 import { fetchPosts, setPosts } from '../../../actions/actions';
 import loadPosts from '../../../loaders/loadPosts';
 
+import './postPage.scss';
+
 import { connect } from 'react-redux';
 
 const renderPosts = (posts) => {
   //todo: create post card component
-  return posts.map(({ id, userId, title, body}) => <div key={id}><Link to={`/post/${id}`}>{title}</Link><p>{body}</p> <p>{`User #${userId}`}</p></div>)
+  return posts.map(({ id, userId, title, body}) => <div key={id} className={`post-card`}>
+    <h3 className='post-card__title'><Link to={`/post/${id}`}>{title}</Link></h3>
+    <p className='post-card__body'>{body}</p>
+    <p className='post-card__user-name'>
+      <Link to={`/user/${userId}`} className='post-card__user-name-link'>{`User #${userId}`}</Link>
+    </p>
+  </div>)
 };
 
 export class PostsPage extends Component {

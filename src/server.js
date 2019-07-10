@@ -42,7 +42,7 @@ const renderPage = (req, store, context) => {
       <script>
         window.INITIAL_STATE = ${JSON.stringify(store.getState())}; //todo: possible XSS, serialize output later
       </script>
-      <script src="/js/client.bundle.js"></script>
+      <script src="/dist/js/client.bundle.js"></script>
     </html>  
   `;
 };
@@ -98,5 +98,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Running on port ${PORT}`);
+  console.log(`App is running on port ${PORT}`);
 });

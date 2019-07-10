@@ -1,0 +1,30 @@
+.post-card {
+  padding: 1rem;
+  background-color: #f3f3f3;
+  box-shadow: 0 0 3px #ccc;
+  margin-bottom: 1rem;
+}
+
+.post-card__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.post-card__user-name {
+  color: #525252;
+  font-weight: bold;
+}
+
+.post-card__body {
+  margin-bottom: 1rem;
+  font-size: 18px;
+}
+
+.post-card__user-name-link {
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    color: red;
+  }
+}

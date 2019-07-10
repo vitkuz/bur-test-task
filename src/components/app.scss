@@ -46,3 +46,35 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+///
+
+.page  {
+  max-width: 100%;
+  margin: auto;
+}
+
+@media (min-width: 600px) {
+  .page  {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .page  {
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page  {
+    max-width: 80%;
+
+  }
+}
+
+@media (min-width: 1440px) {
+  .page  {
+    max-width: 70%;
+  }
+}

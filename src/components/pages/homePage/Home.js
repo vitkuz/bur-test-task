@@ -6,7 +6,14 @@ import loadPosts from '../../../loaders/loadPosts';
 import { connect } from 'react-redux';
 
 const renderPosts = (posts) => {
-  return posts.map(({ id, title, body}) => <div key={id}><Link to={`/posts/${id}`}>{title}</Link><p>{body}</p></div>)
+  //todo: create post card component
+  return posts.map(({ id, userId, title, body}) => <div key={id} className={`post-card`}>
+    <h3 className='post-card__title'><Link to={`/post/${id}`}>{title}</Link></h3>
+    <p className='post-card__body'>{body}</p>
+    <p className='post-card__user-name'>
+      <Link to={`/user/${userId}`} className='post-card__user-name-link'>{`User #${userId}`}</Link>
+    </p>
+  </div>)
 };
 
 export class Home extends Component {

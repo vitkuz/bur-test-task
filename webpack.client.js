@@ -6,7 +6,7 @@ module.exports = {
   mode: 'development',
   entry: './src/index.client.js',
   output: {
-    filename: 'js/client.bundle.js',
+    filename: 'dist/js/client.bundle.js',
     path: path.resolve(__dirname, 'public')
   },
   module: {

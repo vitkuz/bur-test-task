@@ -16,11 +16,12 @@
   },
   "scripts": {
     "test": "jest --watch --config=jest.config.json",
-    "dev": "run-p dev:build:client dev:build:server dev:server-build",
+    "dev": "run-s dev:build:client dev:build:server dev:server-build",
     "dev:server": "nodemon src/index.server.js",
     "dev:server-build": "nodemon build/server.bundle.js",
-    "dev:build:server": "webpack --config webpack.server.js --watch",
-    "dev:build:client": "webpack --config webpack.client.js --watch"
+    "dev:build": "run-p dev:build:client dev:build:server",
+    "dev:build:server": "webpack --config webpack.server.js",
+    "dev:build:client": "webpack --config webpack.client.js"
   },
   "eslintConfig": {
     "extends": "react-app"
