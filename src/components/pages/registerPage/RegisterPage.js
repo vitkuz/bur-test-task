@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
-class RegisterPage extends Component {
+export class RegisterPage extends Component {
   state = {
     username: '',
     email: '',
     password: '',
+    error: ''
   };
 
   changeField = (e) => {
@@ -21,8 +22,13 @@ class RegisterPage extends Component {
     // console.log(e.target.elements);
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
+    const username = e.target.elements.username.value;
 
-    console.log('Fake submit', { email, password });
+    if (email && password && username) {
+      console.log('Fake submit', { email, password, username });
+    } else {
+      this.setState({ error: 'Email, password, username are required!' });
+    }
   };
 
   render() {
@@ -32,6 +38,7 @@ class RegisterPage extends Component {
     return (
       <div className={`page page-login`}>
         <h1>Login</h1>
+        { this.state.error ? <p className={`error`}>{this.state.error}</p> : null }
         <form onSubmit={this.submitForm}>
           <div className="form-group">
             <input type="text" name="username" className="form-control" placeholder="Your Username *" value={username} onChange={this.changeField} autoFocus={true}/>

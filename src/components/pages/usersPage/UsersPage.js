@@ -10,7 +10,7 @@ const renderUsers = (users) => {
   return users.map(({ id, username, email}) => <div key={id}><Link to={`/user/${id}`}>{username}</Link><p>{email}</p></div>)
 };
 
-class UsersPage extends Component {
+export class UsersPage extends Component {
   componentDidMount() {
     this.props.fetchUsers();
   }

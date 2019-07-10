@@ -9,7 +9,7 @@ const renderPosts = (posts) => {
   return posts.map(({ id, title, body}) => <div key={id}><Link to={`/posts/${id}`}>{title}</Link><p>{body}</p></div>)
 };
 
-class Home extends Component {
+export class Home extends Component {
 
   componentDidMount() {
     this.props.fetchPosts();

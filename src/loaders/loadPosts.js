@@ -6,7 +6,6 @@ export default () => {
       .get('https://jsonplaceholder.typicode.com/posts')
       .then(response => {
         const { data: posts } = response;
-        // console.debug(posts);
         resolve(posts);
       })
       .catch(e => {

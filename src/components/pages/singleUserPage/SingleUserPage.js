@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { fetchUserById, setUser } from '../../../actions/actions';
 import loadUserById from "../../../loaders/loadUserById";
 
-class SingleUserPage extends Component {
+export class SingleUserPage extends Component {
 
   componentDidMount() {
     // console.log(this.props.match.params.userId);

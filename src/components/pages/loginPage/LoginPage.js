@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
-class LoginPage extends Component {
+export class LoginPage extends Component {
   state = {
     email: '',
     password: '',
+    error:''
   };
 
   changeField = (e) => {
@@ -21,7 +22,11 @@ class LoginPage extends Component {
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
 
-    console.log('Fake submit', { email, password });
+    if (email && password) {
+      console.log('Fake submit', { email, password });
+    } else {
+      this.setState({ error: 'Email and password are required!' });
+    }
   };
 
   render() {

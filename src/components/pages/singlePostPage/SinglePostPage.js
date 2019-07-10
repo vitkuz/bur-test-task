@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { fetchPostById, setPost } from '../../../actions/actions';
 import loadPostById from "../../../loaders/loadPostById";
 
-class SinglePostPage extends Component {
+export class SinglePostPage extends Component {
 
   componentDidMount() {
     // console.log(this.props.match.params.postId);
@@ -56,7 +56,7 @@ const mapStateToProps = (state) => {
   return {
     post: state.post
   }
-}
+};
 
 export default {
   component: connect(mapStateToProps, { fetchPostById })(SinglePostPage),

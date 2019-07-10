@@ -1,4 +1,4 @@
-import { put, takeEvery } from 'redux-saga/effects'
+import { put, takeEvery, call } from 'redux-saga/effects'
 
 import { setPosts, setUsers, setUser, setPost } from "../actions/actions";
 import * as A from '../actions/actions.types';
@@ -9,7 +9,7 @@ import loadUserById from '../loaders/loadUserById';
 import loadPostById from '../loaders/loadPostById';
 
 export function* setPostsAsync() {
-  const posts = yield loadPosts();
+  const posts = yield call(loadPosts);
 
   // console.log(posts);
 
@@ -22,7 +22,7 @@ export function* watchFetchingPosts() {
 
 
 export function* setUsersAsync() {
-  const users = yield loadUsers();
+  const users = yield call(loadUsers);
 
   // console.log(users);
 
@@ -35,7 +35,7 @@ export function* watchFetchingUsers() {
 
 
 export function* setCurrentUserAsync({id}) {
-  const user = yield loadUserById(id);
+  const user = yield call(loadUserById, id);
 
   // console.log(user);
 
@@ -47,7 +47,7 @@ export function* watchFetchingUserById() {
 }
 
 export function* setCurrentPostAsync({id}) {
-  const post = yield loadPostById(id);
+  const post = yield call(loadPostById, id);
 
   // console.log(post);
 

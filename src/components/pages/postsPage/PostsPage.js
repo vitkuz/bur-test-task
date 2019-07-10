@@ -10,7 +10,7 @@ const renderPosts = (posts) => {
   return posts.map(({ id, userId, title, body}) => <div key={id}><Link to={`/post/${id}`}>{title}</Link><p>{body}</p> <p>{`User #${userId}`}</p></div>)
 };
 
-class PostsPage extends Component {
+export class PostsPage extends Component {
   constructor(props) {
     super(props);
   }
