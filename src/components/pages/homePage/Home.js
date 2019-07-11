@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchPosts, setPosts } from '../../../actions/actions';
+import { fetchPosts, setPosts } from '../../../store/actions/actions';
 import loadPosts from '../../../loaders/loadPosts';
 
 import { connect } from 'react-redux';

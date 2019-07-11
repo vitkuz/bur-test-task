@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import PostsList from '../../ui/postsList/PostsList';
 import UserCard from '../../ui/userCard/UserCard';
 
-import { fetchUserById, setUser } from '../../../actions/users/users.actions';
+import { fetchUserById, setUser } from '../../../store/actions/users/users.actions';
 import loadUserById from "../../../loaders/loadUserById";
-import getUserPosts from "../../../selectors/getUserPosts";
+import getUserPostsSelector from "../../../store/selectors/getUserPosts.selector";
 
 export class SingleUserPage extends PureComponent {
 
@@ -57,7 +57,7 @@ export function serverLoadData(store, match) {
 const mapStateToProps = (state) => {
   return {
     user: state.user,
-    posts: getUserPosts(state.posts, state.user)
+    posts: getUserPostsSelector(state.posts, state.user)
   }
 };
 

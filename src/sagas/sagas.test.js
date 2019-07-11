@@ -1,5 +1,5 @@
 import * as SAGAS from '.';
-import * as ACTIONS from '../actions/actions';
+import * as ACTIONS from '../store/actions/actions';
 import { put, call } from 'redux-saga/effects';
 import loadPosts from "../loaders/loadPosts";
 import loadUsers from "../loaders/loadUsers";

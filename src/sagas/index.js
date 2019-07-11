@@ -1,7 +1,7 @@
 import { put, takeEvery, call } from 'redux-saga/effects'
 
-import { setPosts, setUsers, setUser, setPost } from "../actions/actions";
-import * as A from '../actions/actions.types';
+import { setPosts, setUsers, setUser, setPost } from "../store/actions/actions";
+import * as A from '../store/actions/actions.types';
 
 import loadPosts from '../loaders/loadPosts';
 import loadUsers from '../loaders/loadUsers';

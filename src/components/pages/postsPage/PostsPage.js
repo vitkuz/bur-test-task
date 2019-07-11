@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchPosts, setPosts } from '../../../actions/posts/posts.actions';
+import { fetchPosts, setPosts } from '../../../store/actions/posts/posts.actions';
 import loadPosts from '../../../loaders/loadPosts';
 
 import './PostPage.scss';

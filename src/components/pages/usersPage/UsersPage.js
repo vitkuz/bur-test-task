@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchUsers, setUsers } from '../../../actions/actions';
+import { fetchUsers, setUsers } from '../../../store/actions/actions';
 import loadUsers from '../../../loaders/loadUsers';
 
 import { connect } from 'react-redux';

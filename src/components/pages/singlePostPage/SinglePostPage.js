@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { fetchPostById, setPost } from '../../../actions/posts/posts.actions';
+import { fetchPostById, setPost } from '../../../store/actions/posts/posts.actions';
 import loadPostById from "../../../loaders/loadPostById";
 
 export class SinglePostPage extends PureComponent {
