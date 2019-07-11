@@ -8,6 +8,7 @@ import LoginPage from '../pages/loginPage/LoginPage';
 import RegisterPage from '../pages/registerPage/RegisterPage';
 import SinglePostPage from '../pages/singlePostPage/SinglePostPage';
 import SingleUserPage from '../pages/singleUserPage/SingleUserPage';
+import ProfilePage from '../pages/profilePage/ProfilePage';
 
 const Routes = [
   {
@@ -33,6 +34,11 @@ const Routes = [
       {
         path: '/post/:postId',
         ...SinglePostPage,
+      },
+      {
+        path: '/user',
+        exact: true,
+        ...ProfilePage,
       },
       {
         path: '/user/:userId',
