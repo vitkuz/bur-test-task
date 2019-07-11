@@ -1,13 +1,13 @@
 import * as SAGAS from '.';
-import * as ACTIONS from '../store/actions/actions';
+import * as ACTIONS from '../actions/actions';
 import { put, call } from 'redux-saga/effects';
-import loadPosts from "../loaders/loadPosts";
-import loadUsers from "../loaders/loadUsers";
-import loadUserById from "../loaders/loadUserById";
-import loadPostById from "../loaders/loadPostById";
+import loadPosts from "../../loaders/loadPosts";
+import loadUsers from "../../loaders/loadUsers";
+import loadUserById from "../../loaders/loadUserById";
+import loadPostById from "../../loaders/loadPostById";
 
-import postsMock from '../tests/__mocks__/postsMock';
-import usersMock from '../tests/__mocks__/usersMock';
+import postsMock from '../../tests/__mocks__/postsMock';
+import usersMock from '../../tests/__mocks__/usersMock';
 
 test("setPostsAsync should load posts and set them", () => {
     const gen = SAGAS.setPostsAsync();

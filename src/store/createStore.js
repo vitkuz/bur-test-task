@@ -6,8 +6,10 @@ import {
   watchFetchingPosts,
   watchFetchingUsers,
   watchFetchingPostById,
-  watchFetchingUserById
-} from '../sagas';
+  watchFetchingUserById,
+  watchLogin,
+  watchRegister,
+} from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -25,6 +27,8 @@ export default (INITIAL_STATE = {}) => {
   sagaMiddleware.run(watchFetchingUsers);
   sagaMiddleware.run(watchFetchingPostById);
   sagaMiddleware.run(watchFetchingUserById);
+  sagaMiddleware.run(watchLogin);
+  sagaMiddleware.run(watchRegister);
 
   return store;
 };

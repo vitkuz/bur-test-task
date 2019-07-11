@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {logIn} from "../../../store/actions/auth.actions";
 
 export class LoginPage extends Component {
   state = {
@@ -24,6 +25,9 @@ export class LoginPage extends Component {
 
     if (email && password) {
       console.log('Fake submit', { email, password });
+
+      this.props.logIn({ email, password });
+
     } else {
       this.setState({ error: 'Email and password are required!' });
     }
@@ -52,6 +56,4 @@ export class LoginPage extends Component {
   }
 };
 
-export default {
-  component: LoginPage
-};
+export default LoginPage;

@@ -13,10 +13,11 @@ export const UserMenu = () => {
           <NavLink to={`/login`} className={`user-menu__link`} activeClassName={`user-menu__link--active`}>Login</NavLink>
         </li>
         <li className={`user-menu__item`}>
-          <NavLink to={`/system`} className={`user-menu__link`} activeClassName={`user-menu__link--active`}>System</NavLink>
-        </li>
-        <li className={`user-menu__item`}>
           <NavLink to={`/register`} className={`user-menu__link`} activeClassName={`user-menu__link--active`}>Register</NavLink>
+        </li>
+
+        <li className={`user-menu__item`}>
+          <NavLink to={`/system`} className={`user-menu__link`} activeClassName={`user-menu__link--active`}>System</NavLink>
         </li>
       </ul>
     </div>
