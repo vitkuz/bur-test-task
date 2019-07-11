@@ -57,6 +57,4 @@ export class RegisterPage extends Component {
     )
   }
 };
-export default {
-  component: RegisterPage
-};
+export default RegisterPage;

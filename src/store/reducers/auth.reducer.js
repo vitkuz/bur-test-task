@@ -8,9 +8,11 @@ export default (state = defaultState, action) => {
 
     case A.SET_CURRENT_USER:
 
-      console.log(A.SET_CURRENT_USER, action);
-
       return action.user;
+
+    case A.LOG_OUT:
+
+      return null;
 
     default:
       return state;

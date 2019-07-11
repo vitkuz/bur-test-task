@@ -8,13 +8,13 @@ const mapStateToProps = (state) => {
     }
 };
 
-function withRedirect(WrappedComponent) {
+function withoutAuthRedirect(WrappedComponent, redirectUrl = '/user') {
     return (
         connect(mapStateToProps, null)(class extends Component {
             render() {
                 return (
                     <>
-                        { this.props.auth ? <WrappedComponent {...this.props}/> : <Redirect to='/login' /> }
+                        { this.props.auth ? <Redirect to={redirectUrl} /> : <WrappedComponent {...this.props}/> }
                     </>
                 )
             }
@@ -22,4 +22,4 @@ function withRedirect(WrappedComponent) {
     )
 }
 
-export default withRedirect;
+export default withoutAuthRedirect;

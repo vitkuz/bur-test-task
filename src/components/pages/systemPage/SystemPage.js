@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-import withRedirect from '../../hocs/withRedirect';
+import withRedirect from '../../hocs/withAuthRedirect';
 // import withAuth from '../../hocs/withAuth';
 
 export class ProfilePage extends PureComponent {

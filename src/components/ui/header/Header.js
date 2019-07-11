@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu from '../menu/Menu';
 import Logo from '../logo/Logo';
-import UserMenu from '../userMenu/UserMenu';
+import UserMenu from '../userMenu/UserMenu.container';
 
 import './header.scss';
 

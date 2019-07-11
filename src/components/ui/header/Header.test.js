@@ -3,7 +3,7 @@ import { shallow, mount, render } from 'enzyme';
 import Header from './Header';
 import Logo from '../logo/Logo';
 import Menu from '../menu/Menu';
-import UserMenu from '../userMenu/UserMenu';
+import UserMenu from '../userMenu/UserMenu.component';
 
 test('Header should render', () => {
   const wrapper = shallow(<Header />);
