@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchPosts, setPosts } from '../../../actions/actions';
+import { fetchPosts, setPosts } from '../../../actions/posts/posts.actions';
 import loadPosts from '../../../loaders/loadPosts';
 
-import './postPage.scss';
+import './PostPage.scss';
 
 import { connect } from 'react-redux';
 
@@ -18,7 +18,7 @@ const renderPosts = (posts) => {
   </div>)
 };
 
-export class PostsPage extends Component {
+export class PostsPage extends PureComponent {
   constructor(props) {
     super(props);
   }
@@ -37,7 +37,7 @@ export class PostsPage extends Component {
   }
 }
 
-export function server_loadData(store) {
+export function serverLoadData(store) {
   //used for SSR
   return new Promise((resolve) => {
     loadPosts().then(posts => {
@@ -55,5 +55,5 @@ const mapStateToProps = (state) => {
 
 export default {
   component: connect(mapStateToProps, { fetchPosts })(PostsPage),
-  loadData: server_loadData
+  loadData: serverLoadData
 };

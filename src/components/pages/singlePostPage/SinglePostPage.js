@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { fetchPostById, setPost } from '../../../actions/actions';
+import { fetchPostById, setPost } from '../../../actions/posts/posts.actions';
 import loadPostById from "../../../loaders/loadPostById";
 
-export class SinglePostPage extends Component {
+export class SinglePostPage extends PureComponent {
 
   componentDidMount() {
     // console.log(this.props.match.params.postId);
@@ -38,7 +38,7 @@ export class SinglePostPage extends Component {
 }
 
 
-export function server_loadData(store, match) {
+export function serverLoadData(store, match) {
 
   const { postId } = match.params;
 
@@ -60,5 +60,5 @@ const mapStateToProps = (state) => {
 
 export default {
   component: connect(mapStateToProps, { fetchPostById })(SinglePostPage),
-  loadData: server_loadData,
+  loadData: serverLoadData,
 };

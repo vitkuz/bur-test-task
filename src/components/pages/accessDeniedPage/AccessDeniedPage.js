@@ -5,7 +5,7 @@ export const AccessDeniedPage = ({ staticContext = {} }) => {
   staticContext.accessDenied = true;
   return (
     <div className={`page page-access-denied`}>
-      <h1>403</h1>
+      <h1 className={`page-access-denied__title`}>403</h1>
     </div>
   )
 };

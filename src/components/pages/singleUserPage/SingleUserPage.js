@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchUserById, setUser } from '../../../actions/actions';
-import loadUserById from "../../../loaders/loadUserById";
+import PostsList from '../../ui/postsList/PostsList';
+import UserCard from '../../ui/userCard/UserCard';
 
-export class SingleUserPage extends Component {
+import { fetchUserById, setUser } from '../../../actions/users/users.actions';
+import loadUserById from "../../../loaders/loadUserById";
+import getUserPosts from "../../../selectors/getUserPosts";
+
+export class SingleUserPage extends PureComponent {
 
   componentDidMount() {
     // console.log(this.props.match.params.userId);
@@ -14,31 +18,15 @@ export class SingleUserPage extends Component {
   render() {
     // console.log(this.props.user);
     const { id, username, name, phone, website } = this.props.user;
+    const posts = this.props.posts;
 
     if (id) {
       return (
         <div className={`page page-single-user`}>
-          <h1>Single user: {username}</h1>
 
-          <div className={`user`}>
-            <ul className={`user__items`}>
-              <li className={`user__item`}>
-                UserId: {id}
-              </li>
-              <li className={`user__item`}>
-                Username: {username}
-              </li>
-              <li className={`user__item`}>
-                Name: {name}
-              </li>
-              <li className={`user__item`}>
-                Phone: {phone}
-              </li>
-              <li className={`user__item`}>
-                Website: {website}
-              </li>
-            </ul>
-          </div>
+          <UserCard user={this.props.user}/>
+
+          <PostsList posts={posts}/>
 
         </div>
       )
@@ -52,7 +40,7 @@ export class SingleUserPage extends Component {
   }
 }
 
-export function server_loadData(store, match) {
+export function serverLoadData(store, match) {
 
   const { userId } = match.params;
 
@@ -68,11 +56,12 @@ export function server_loadData(store, match) {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
+    posts: getUserPosts(state.posts, state.user)
   }
 };
 
 export default {
   component: connect(mapStateToProps, { fetchUserById })(SingleUserPage),
-  loadData: server_loadData
+  loadData: serverLoadData
 };

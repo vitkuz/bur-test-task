@@ -5,7 +5,7 @@ export const NotFoundPage = ({ staticContext = {} }) => {
   staticContext.notFound = true;
   return (
     <div className={`page page-not-found`}>
-      <h1>404</h1>
+      <h1 className={`page-not-found__title`}>404</h1>
     </div>
   )
 };

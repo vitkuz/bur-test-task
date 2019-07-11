@@ -38,7 +38,7 @@ export class Home extends Component {
   }
 }
 
-export function server_loadData(store) {
+export function serverLoadData(store) {
   //used for SSR
   return new Promise((resolve) => {
     loadPosts().then(posts => {
@@ -56,5 +56,5 @@ const mapStateToProps = (state) => {
 
 export default {
   component: connect(mapStateToProps, { fetchPosts })(Home),
-  loadData: server_loadData
+  loadData: serverLoadData
 };

@@ -13,6 +13,13 @@ export const setPosts = (posts = []) => {
   }
 };
 
+export const fetchPostById = (id) => {
+  return {
+    type: A.FETCH_POST_BY_ID,
+    id
+  }
+};
+
 
 export const fetchUsers = () => {
   return {
@@ -43,12 +50,7 @@ export const setUser = (user = {}) => {
 };
 
 
-export const fetchPostById = (id) => {
-  return {
-    type: A.FETCH_POST_BY_ID,
-    id
-  }
-};
+
 
 export const setPost = (post = {}) => {
   return {

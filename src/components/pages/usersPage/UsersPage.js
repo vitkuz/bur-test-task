@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchUsers, setUsers } from '../../../actions/actions';
 import loadUsers from '../../../loaders/loadUsers';
@@ -10,7 +10,7 @@ const renderUsers = (users) => {
   return users.map(({ id, username, email}) => <div key={id}><Link to={`/user/${id}`}>{username}</Link><p>{email}</p></div>)
 };
 
-export class UsersPage extends Component {
+export class UsersPage extends PureComponent {
   componentDidMount() {
     this.props.fetchUsers();
   }
@@ -31,7 +31,7 @@ export class UsersPage extends Component {
   }
 }
 
-export function server_loadData(store) {
+export function serverLoadData(store) {
   //used for SSR
   return new Promise((resolve) => {
     loadUsers().then(users => {
@@ -50,5 +50,5 @@ const mapStateToProps = (state) => {
 
 export default {
   component: connect(mapStateToProps, { fetchUsers })(UsersPage),
-  loadData: server_loadData
+  loadData: serverLoadData
 };
