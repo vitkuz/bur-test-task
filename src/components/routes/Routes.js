@@ -9,6 +9,7 @@ import RegisterPage from '../pages/registerPage/RegisterPage';
 import SinglePostPage from '../pages/singlePostPage/SinglePostPage';
 import SingleUserPage from '../pages/singleUserPage/SingleUserPage';
 import ProfilePage from '../pages/profilePage/ProfilePage';
+import SystemPage from '../pages/systemPage/SystemPage';
 
 const Routes = [
   {
@@ -47,6 +48,10 @@ const Routes = [
       {
         path: '/users',
         ...UsersPage,
+      },
+      {
+        path: '/system',
+        ...SystemPage,
       },
       {
         ...NotFoundPage,
